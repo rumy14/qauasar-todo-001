@@ -54,11 +54,23 @@
                 round
                 dense
                 color="primary" 
-                icon="delete" 
+                icon="delete"
             />
             </q-item-section>
         </q-item>
     </q-list>
+    <div class="no-tasks absolute-center">
+        <div 
+            v-if="!tasks.length"
+            class="text-h5 text-primary text-center">
+            <q-icon
+                name="check"
+                size="50px"
+                color="primary"
+            />
+            No tasks
+        </div>
+    </div>
   </q-page>
 </template>
 
@@ -113,5 +125,8 @@ export default {
             text-decoration: line-through;
             color: #bbb;
         }
+    }
+    .no-tasks{
+        opacity: 0.7;
     }
 </style>
